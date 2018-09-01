@@ -15,7 +15,7 @@ services:
         delay: 10s
       restart_policy:
         condition: on-failure
-    volumes:  
+    volumes:
        - /home/pi/docker_configs/deluge/:/config
        - /home/pi/downloads:/data
 networks:

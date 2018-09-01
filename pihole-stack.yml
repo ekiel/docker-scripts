@@ -1,0 +1,27 @@
+version: "3.2"
+services:
+ pihole:
+    image: pihole/pihole:v4.0_armhf
+    ports:
+      - "53:53"
+      - "53:53/udp"
+      - "80:80"
+    networks:
+      - ingress
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+    volumes:
+       - /home/pi/docker_configs/pihole/piholeconfig/:/etc/pihole/
+       - /home/pi/docker_configs/pihole/dnsmasq.d/:/etc/dnsmasq.d
+    environment:
+       - WEBPASSWORD=pihole
+       - TZ=US/Central
+       - ServerIP=192.168.0.40
+
+networks:
+ ingress:
