@@ -1,0 +1,22 @@
+version: "3.2"
+services:
+
+  deluge:
+    image: lsioarmhf/deluge
+    ports:
+      - "58846:58846"
+      - "8112:8112"
+    networks:
+      - ingress
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+    volumes:  
+       - /home/pi/docker_configs/deluge/:/config
+       - /home/pi/downloads:/data
+networks:
+ ingress:
