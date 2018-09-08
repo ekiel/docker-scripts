@@ -7,7 +7,7 @@ services:
       - "58846:58846"
       - "8112:8112"
     networks:
-      - ingress
+      - default
     deploy:
       replicas: 1
       update_config:
@@ -19,4 +19,4 @@ services:
        - /home/pi/docker_configs/deluge/:/config
        - /home/pi/downloads:/data
 networks:
- ingress:
+ default:
