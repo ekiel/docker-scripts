@@ -1,0 +1,25 @@
+version: "3.2"
+
+volumes:
+  portainer_data: {}
+
+services:
+  portainer:
+    image: portainer/portainer:arm
+    ports:
+      - "9000:9000"
+    networks:
+      - default
+    deploy:
+      mode: global  
+    # replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+    volumes:  
+       - /var/run/docker.sock:/var/run/docker.sock
+       - portainer_data:/data
+networks:
+ default:
