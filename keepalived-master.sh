@@ -7,4 +7,5 @@ docker run --name keepalived \
 -e VIRTUAL_IPS=192.168.0.30/24 \
 -e PASSWORD=sekret \
 -e STATE=MASTER \
+--restart=always \
 rvben/rpi-keepalived
