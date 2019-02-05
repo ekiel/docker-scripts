@@ -4,5 +4,5 @@ docker run -d \
 --publish 8384:8384 \
 --publish 21027:21027/udp \
 -v /nfs/dockerconfig/syncthing/:/config \
--v /nfs/data/documents/corporate_files/:/data \
+-v /nfs/data/syncthing/:/data \
 lsioarmhf/syncthing
