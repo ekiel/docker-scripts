@@ -6,6 +6,8 @@ docker run -d \
     -p 67:67/udp \
     -p 80:80 \
     -p 443:443 \
+    --cap-add=NET_ADMIN \
+    --dns=127.0.0.1 \
     -v /nfs/dockerconfig/pihole/:/etc/pihole/ \
     -v /nfs/dockerconfig/pihole/dnsmasq.d/:/etc/dnsmasq.d/ \
     -e ServerIP=192.168.0.30 \
