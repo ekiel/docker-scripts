@@ -14,4 +14,4 @@ docker run -d \
     -e WEBPASSWORD=password \
     -e TZ=US/Central \
     --restart=unless-stopped \
-    pihole/pihole:v4.0_armhf
+    pihole/pihole:latest
