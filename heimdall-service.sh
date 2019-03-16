@@ -6,4 +6,4 @@ docker service create \
 -e PUID=1000 \
 --no-resolve-image \
 --mount type=bind,src=//nfs/dockerconfig/heimdall/,dst=/config \
-lsioarmhf/heimdall
+linuxserver/heimdall
