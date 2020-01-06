@@ -8,6 +8,8 @@ docker run -d \
     --name deluge \
     -p 58846:58846 \
     -p 8112:8112 \
-    -v /home/pi/docker_configs/deluge/:/config \
-    -v /home/pi/downloads:/data \
-    lsioarmhf/deluge
+    -v /nfs/dockerconfig/deluge/:/config \
+    -v /nfs/downloads:/data \
+    --restart unless-stopped \
+    linuxserver/deluge
+
