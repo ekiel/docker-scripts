@@ -3,4 +3,5 @@ docker run -d \
 -v /nfs/dockerconfig/heimdall:/config \
 -p 9090:80 \
 -e TZ=US/Central \
+--restart=unless-stopped \
 linuxserver/heimdall
