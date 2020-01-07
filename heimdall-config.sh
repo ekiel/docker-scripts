@@ -1,6 +1,6 @@
-docker create \
+docker run -d \
 --name=heimdall \
--v /home/pi/docker_configs/heimdall:/config \
--p 80:80 -p 443:443 \
+-v /nfs/dockerconfig/heimdall:/config \
+-p 9090:80 \
 -e TZ=US/Central \
 linuxserver/heimdall
